@@ -1,3 +1,5 @@
+import { Download } from "lucide-react";
+
 export default function Hero() {
   return (
     <section className="pt-40 pb-20 px-6 border-b border-bordersubtle">
@@ -31,6 +33,10 @@ export default function Hero() {
           </a>
           <a href="#contact" className="border border-bordersubtle px-6 py-3 rounded hover:border-accent transition">
             Me Contacter
+          </a>
+          <a href="/cv-altizou.pdf" download className="flex items-center gap-2 border border-bordersubtle px-6 py-3 rounded hover:border-accent transition text-accent">
+            <Download size={16} />
+            Telecharger le CV
           </a>
         </div>
       </div>
