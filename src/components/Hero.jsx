@@ -28,14 +28,17 @@ export default function Hero() {
         </p>
 
         <div className="flex flex-wrap gap-4">
-          <a href="#projets" className="bg-accent text-bgprimary font-semibold px-6 py-3 rounded hover:bg-accentdim transition">
-            Voir les Projets
+          <a href="#projets" className="group relative overflow-hidden bg-accent text-bgprimary font-semibold px-6 py-3 rounded transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
+            <span className="relative z-10">Voir les Projets</span>
+            <span className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
           </a>
-          <a href="#contact" className="border border-bordersubtle px-6 py-3 rounded hover:border-accent transition">
+
+          <a href="#contact" className="relative border border-bordersubtle px-6 py-3 rounded transition-all duration-300 hover:scale-105 hover:border-accent hover:text-accent hover:shadow-[0_0_15px_rgba(34,211,238,0.25)]">
             Me Contacter
           </a>
-          <a href="/cv-altizou.pdf" download className="flex items-center gap-2 border border-bordersubtle px-6 py-3 rounded hover:border-accent transition text-accent">
-            <Download size={16} />
+
+          <a href="/cv-altizou.pdf" download className="group flex items-center gap-2 border border-bordersubtle px-6 py-3 rounded text-accent transition-all duration-300 hover:scale-105 hover:bg-accent hover:text-bgprimary hover:shadow-[0_0_15px_rgba(34,211,238,0.25)]">
+            <Download size={16} className="transition-transform duration-300 group-hover:translate-y-0.5" />
             Telecharger le CV
           </a>
         </div>
