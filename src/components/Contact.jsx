@@ -20,6 +20,7 @@ function LinkedinIcon(props) {
 }
 
 const LETTERS_ONLY = /[^A-Za-zÀ-ÿ\s'-]/g;
+const API_URL = "https://portfolio-api-production-d79c.up.railway.app/api/contact";
 
 export default function Contact() {
   const [form, setForm] = useState({ nom: "", email: "", message: "" });
@@ -29,7 +30,7 @@ export default function Contact() {
   function handleChange(e) {
     const { name, value } = e.target;
 
-    if (name === "nom" || name === "message") {
+    if (name === "nom") {
       setForm({ ...form, [name]: value.replace(LETTERS_ONLY, "") });
     } else {
       setForm({ ...form, [name]: value });
@@ -42,7 +43,7 @@ export default function Contact() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("http://localhost:8080/api/contact", {
+      const res = await fetch(API_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
